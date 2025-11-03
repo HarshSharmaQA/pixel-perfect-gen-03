@@ -15,13 +15,33 @@ export const PromptBuilder = ({ platform, onPromptChange }: PromptBuilderProps) 
   const [copied, setCopied] = useState(false);
   const { toast } = useToast();
 
-  const defaultPrompt = `Generate production-ready ${platform} code that:
-- Matches the design pixel-perfectly (0-2px tolerance)
-- Is fully responsive (mobile, tablet, desktop)
-- Follows best practices and clean code principles
-- Includes proper semantic HTML and accessibility
-- Uses modern CSS techniques and animations
-- Is optimized for performance`;
+  const defaultPrompt = `Generate production-ready ${platform} code with 100% design accuracy:
+
+PIXEL-PERFECT REQUIREMENTS:
+✓ Extract EXACT colors (HEX/RGB/HSL) - no approximations
+✓ Measure ALL spacing values to exact pixels (margins, padding, gaps)
+✓ Match typography precisely (font-family, size, weight, line-height, letter-spacing)
+✓ Replicate layout structure exactly (grid systems, flexbox, positioning)
+✓ Copy ALL component dimensions and styles (buttons, cards, forms)
+✓ Match shadows, borders, gradients, and effects exactly
+✓ Implement ALL responsive breakpoints from design
+✓ Preserve exact icon sizes, image dimensions, and visual hierarchy
+
+CODE QUALITY:
+✓ Fully responsive (mobile, tablet, desktop) matching design breakpoints
+✓ Semantic HTML5 with proper ARIA labels and accessibility
+✓ Clean, maintainable component architecture
+✓ Modern CSS techniques (flexbox, grid, custom properties)
+✓ Smooth transitions and animations from design
+✓ Performance optimized (lazy loading, efficient selectors)
+✓ Production-ready with proper error handling
+
+VALIDATION:
+✓ 0px tolerance for spacing and dimensions
+✓ Exact color matching verified
+✓ Typography specs confirmed
+✓ All interactive states implemented (hover, focus, active)
+✓ Cross-browser compatibility ensured`;
 
   const handleCopy = () => {
     navigator.clipboard.writeText(customPrompt || defaultPrompt);
